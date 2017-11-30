@@ -1,50 +1,27 @@
-# Terraform "Hello, World" example
+# Terraform examples Google Cloud (GCP)
 
-This folder contains a "Hello, World" example of a Terraform file (https://www.terraform.io/).
-This Terraform file deploys a single server in Google Cloud Platform (GCP).
+This repo contains Terraform code examples on the Google Cloud Platform (GCP).
 
-## Requirements
 
-* You must have [Terraform](https://www.terraform.io/) installed on your computer. 
-* You must have a [Google Cloud Platform (GCP) account](https://cloud.google.com/).
-* You must have downloaded a Google Cloud Platform credentials file.
-* You must have enabled the Google Compute Engine API
+The Github repository
+[https://github.com/alfonsof/terraform-examples-aws](https://github.com/alfonsof/terraform-examples-aws)
+contains the code samples based in the book *[Terraform: Up and Running](http://www.terraformupandrunning.com)* by [Yevgeniy Brikman](http://www.ybrikman.com).
 
-This code was written for Terraform 0.10.x.
-
-## Using the code
-
-Two ways in order to configure credentials:
-
-* Configure GOOGLE_APPLICATION_CREDENTIALS environment variable. The variable must contain the path to the credentials file.
-
-```
-export GOOGLE_APPLICATION_CREDENTIALS="~/.gcloud/terraform-examples-code.json)"
-```
-
-* Configure GOOGLE_CREDENTIALS environment variable. The variable must contain the content of the credentials file and not the path to it.
-
-```
-export GOOGLE_CREDENTIALS="$(cat ~/.gcloud/terraform-examples-code.json)"
-```
+But all examples use Amazon Web Services (AWS). Terraform also supports other Cloud providers and this Github repository contains the code samples of
+the book to Google Cloud Platform (GCP).
 
 
 
 
-Validate the changes:
+## Quick start
 
-```
-terraform plan
-```
+All the code is in the [code](/code) folder. The code consists of Terraform examples using HashiCorp Configuration Language (HCL) on Google Cloud Platform (GCP).
 
-Deploy the changes:
+For instructions on running the code, please consult the README in each folder. 
 
-```
-terraform apply
-```
 
-Clean up the resources created when you have finished:
 
-```
-terraform destroy
-```
+
+## License
+
+This code is released under the MIT License. See LICENSE file.
