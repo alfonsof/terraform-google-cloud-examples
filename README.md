@@ -1,4 +1,4 @@
-# Terraform examples Google Cloud (GCP)
+# Terraform examples on Google Cloud Platform (GCP)
 
 This repo contains Terraform code examples on the Google Cloud Platform (GCP).
 
