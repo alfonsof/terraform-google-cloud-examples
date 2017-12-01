@@ -28,9 +28,6 @@ export GOOGLE_APPLICATION_CREDENTIALS="~/.gcloud/terraform-examples-code.json)"
 export GOOGLE_CREDENTIALS="$(cat ~/.gcloud/terraform-examples-code.json)"
 ```
 
-
-
-
 Validate the changes:
 
 ```
