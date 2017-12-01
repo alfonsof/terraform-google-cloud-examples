@@ -19,7 +19,7 @@ Two ways in order to configure credentials:
 * Configure GOOGLE_APPLICATION_CREDENTIALS environment variable. The variable must contain the path to the credentials file.
 
 ```
-export GOOGLE_APPLICATION_CREDENTIALS="~/.gcloud/terraform-examples-code.json)"
+export GOOGLE_APPLICATION_CREDENTIALS="~/.gcloud/terraform-examples-code.json"
 ```
 
 * Configure GOOGLE_CREDENTIALS environment variable. The variable must contain the content of the credentials file and not the path to it.
