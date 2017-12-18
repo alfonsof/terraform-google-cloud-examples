@@ -17,7 +17,7 @@ resource "google_compute_firewall" "instance" {
 
   allow {
     protocol = "tcp"
-    ports    = ["8080"]
+    ports    = ["${var.server_port}"]
   }
 }
 
