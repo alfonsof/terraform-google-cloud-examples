@@ -1,12 +1,16 @@
 variable "server_port" {
   description = "The port the server will use for HTTP requests"
-  default = "8080"
+  default = "80"
 }
 
 provider "google" {
   project     = "terraform-examples-gcloud"
   # credentials = GOOGLE_CREDENTIALS
   region = "us-east1"
+}
+
+resource "google_compute_address" "example" {
+    name = "example-address"
 }
 
 resource "google_compute_firewall" "instance" {
@@ -21,34 +25,12 @@ resource "google_compute_firewall" "instance" {
   }
 }
 
-resource "google_compute_address" "example" {
-    name = "example-address"
-}
-
-resource "google_compute_instance_template" "example" {
-  machine_type  = "f1-micro"
-  
-  disk {
-    source_image = "ubuntu-1604-lts"
-  }
-  
-  network_interface {
-    network = "default"
-
-    #access_config {
-    #  // Ephemeral IP
-    #}
-  }
-  
-  tags = ["terraform-example"]
-  
-  metadata_startup_script = "echo 'Hello, World' > index.html ; nohup busybox httpd -f -p ${var.server_port} &"
-}
+#---------------------------------------------------------------------
 
 resource "google_compute_forwarding_rule" "example" {
   name       = "example-forwarding-rule"
   target     = "${google_compute_target_pool.example.self_link}"
-  port_range = "${var.server_port}"
+  port_range = "80"
   ip_address = "${google_compute_address.example.address}"
 }
 
@@ -56,6 +38,18 @@ resource "google_compute_target_pool" "example" {
   name          = "example-target-pool"
   health_checks = ["${google_compute_http_health_check.example.name}"]
 }
+
+resource "google_compute_http_health_check" "example" {
+  name                 = "example-health-check"
+  request_path         = "/"
+  check_interval_sec   = 30
+  timeout_sec          = 3
+  healthy_threshold    = 2
+  unhealthy_threshold  = 2
+  port                 = "${var.server_port}"
+}
+
+#---------------------------------------------------------------------
 
 resource "google_compute_instance_group_manager" "example" {
   name = "example-group-manager"
@@ -82,6 +76,22 @@ resource "google_compute_autoscaler" "example" {
   }
 }
 
+resource "google_compute_instance_template" "example" {
+  machine_type  = "f1-micro"
+  
+  disk {
+    source_image = "ubuntu-1604-lts"
+  }
+  
+  network_interface {
+    network = "default"
+  }
+  
+  metadata_startup_script = "echo 'Hello, World' > index.html ; nohup busybox httpd -f -p ${var.server_port} &"
+}
+
+#---------------------------------------------------------------------
+/*
 resource "google_compute_backend_service" "example" {
   name        = "example-backend-service"
   port_name   = "http"
@@ -95,16 +105,8 @@ resource "google_compute_backend_service" "example" {
 
   health_checks = ["${google_compute_http_health_check.example.self_link}"]
 }
-
-resource "google_compute_http_health_check" "example" {
-  name                 = "example-health-check"
-  request_path         = "/"
-  check_interval_sec   = 30
-  timeout_sec          = 3
-  healthy_threshold    = 2
-  unhealthy_threshold  = 2
-  port                 = "${var.server_port}"
-}
+*/
+#---------------------------------------------------------------------
 
 output "public_ip" {
   value = "${google_compute_address.example.address}"
