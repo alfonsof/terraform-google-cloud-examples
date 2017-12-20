@@ -1,8 +1,3 @@
-variable "server_port" {
-  description = "The port the server will use for HTTP requests"
-  default = "80"
-}
-
 provider "google" {
   project     = "terraform-examples-gcloud"
   # credentials = GOOGLE_CREDENTIALS
@@ -107,7 +102,3 @@ resource "google_compute_backend_service" "example" {
 }
 */
 #---------------------------------------------------------------------
-
-output "public_ip" {
-  value = "${google_compute_address.example.address}"
-}
