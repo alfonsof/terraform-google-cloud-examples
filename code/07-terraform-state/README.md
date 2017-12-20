@@ -1,7 +1,7 @@
 # Terraform State example
 
 This folder contains a state example of a Terraform file (https://www.terraform.io/).
-This Terraform file use the Google Cloud Storage bucket created in the previous example (create-clou-storage) to store the information about what infrastructure has been created.
+This Terraform file use the Google Cloud Storage bucket created in the previous example (create-cloud-storage) to store the information about what infrastructure has been created.
 This information is stored in the Terraform state file `terraform.tfstate`. This file contains a JSON format that records a mapping from the representation of the resources in GCP (Google Cloud Platform) to Terrafom resources in the configuration files.
 
 ## Requirements
