@@ -7,7 +7,7 @@ This Terraform file deploys a single server on Google Cloud Platform (GCP).
 ## Requirements
 
 * You must have [Terraform](https://www.terraform.io/) installed on your computer.
-* You must have a [Google Cloud Platform (GCP) account](https://cloud.google.com/).
+* You must have a [Google Cloud Platform (GCP)](https://cloud.google.com/) account.
 * You must have downloaded a Google Cloud Platform credentials file.
 * You must have enabled the Google Compute Engine API.
 * This code was written for Terraform 0.10.x.
