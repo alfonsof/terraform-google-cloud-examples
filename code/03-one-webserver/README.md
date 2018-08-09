@@ -14,40 +14,42 @@ This Terraform file deploys a single web server on Google Cloud Platform (GCP). 
 
 ## Using the code
 
-Two ways in order to configure credentials:
+* Configure your Google Cloud access keys.
 
-* Configure GOOGLE_APPLICATION_CREDENTIALS environment variable. The variable must contain the path to the credentials file.
+  Two ways in order to configure credentials:
 
-```bash
-export GOOGLE_APPLICATION_CREDENTIALS="~/.gcloud/terraform-examples-code.json"
-```
+  * Configure GOOGLE_APPLICATION_CREDENTIALS environment variable. The variable must contain the path to the credentials file.
 
-* Configure GOOGLE_CREDENTIALS environment variable. The variable must contain the content of the credentials file and not the path to it.
+  ```bash
+  export GOOGLE_APPLICATION_CREDENTIALS="~/.gcloud/terraform-examples-code.json"
+  ```
 
-```bash
-export GOOGLE_CREDENTIALS="$(cat ~/.gcloud/terraform-examples-code.json)"
-```
+  * Configure GOOGLE_CREDENTIALS environment variable. The variable must contain the content of the credentials file and not the path to it.
 
-Validate the changes:
+  ```bash
+  export GOOGLE_CREDENTIALS="$(cat ~/.gcloud/terraform-examples-code.json)"
+  ```
 
-```bash
-terraform plan
-```
+* Validate the changes:
 
-Deploy the changes:
+  ```bash
+  terraform plan
+  ```
 
-```bash
-terraform apply
-```
+* Deploy the changes:
 
-Test the web server. When the `apply` command completes, it will output the public IP address of the web server.
+  ```bash
+  terraform apply
+  ```
 
-```bash
-curl http://(server_public_ip):8080/
-```
+* Test the web server. When the `apply` command completes, it will output the public IP address of the web server.
 
-Clean up the resources created when you have finished:
+  ```bash
+  curl http://(server_public_ip):8080/
+  ```
 
-```bash
-terraform destroy
-```
+* Clean up the resources created when you have finished:
+
+  ```bash
+  terraform destroy
+  ```
