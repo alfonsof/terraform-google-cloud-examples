@@ -20,11 +20,21 @@ This Terraform file deploys the creation a of a bucket on Google Cloud Platform 
 
   * Configure `GOOGLE_APPLICATION_CREDENTIALS` environment variable. The variable must contain the path to the credentials file.
 
+    To set these variable on Linux, macOS, or Unix, use `export`:
+
     ```bash
     export GOOGLE_APPLICATION_CREDENTIALS="~/.gcloud/terraform-examples-code.json"
     ```
 
+    To set these variable on Windows, use `set`:
+
+    ```bash
+    set GOOGLE_APPLICATION_CREDENTIALS="C:\Users\USERNAME\.gcloud\terraform-examples-code.json"
+    ```
+
   * Configure `GOOGLE_CREDENTIALS` environment variable. The variable must contain the content of the credentials file and not the path to it.
+
+    To set these variable on Linux, macOS, or Unix, use `export`:
 
     ```bash
     export GOOGLE_CREDENTIALS="$(cat ~/.gcloud/terraform-examples-code.json)"
