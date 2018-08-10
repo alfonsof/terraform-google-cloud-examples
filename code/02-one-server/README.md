@@ -18,17 +18,17 @@ This Terraform file deploys a single server on Google Cloud Platform (GCP).
 
   Two ways in order to configure credentials:
 
-  * Configure GOOGLE_APPLICATION_CREDENTIALS environment variable. The variable must contain the path to the credentials file.
+  * Configure `GOOGLE_APPLICATION_CREDENTIALS` environment variable. The variable must contain the path to the credentials file.
 
-  ```bash
-  export GOOGLE_APPLICATION_CREDENTIALS="~/.gcloud/terraform-examples-code.json"
-  ```
+    ```bash
+    export GOOGLE_APPLICATION_CREDENTIALS="~/.gcloud/terraform-examples-code.json"
+    ```
 
-  * Configure GOOGLE_CREDENTIALS environment variable. The variable must contain the content of the credentials file and not the path to it.
+  * Configure `GOOGLE_CREDENTIALS` environment variable. The variable must contain the content of the credentials file and not the path to it.
 
-  ```bash
-  export GOOGLE_CREDENTIALS="$(cat ~/.gcloud/terraform-examples-code.json)"
-  ```
+    ```bash
+    export GOOGLE_CREDENTIALS="$(cat ~/.gcloud/terraform-examples-code.json)"
+    ```
 
 * Validate the changes:
 
