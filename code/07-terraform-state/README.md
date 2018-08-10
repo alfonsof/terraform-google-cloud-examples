@@ -42,6 +42,12 @@ This information is stored in the Terraform state file `terraform.tfstate`. This
     export GOOGLE_CREDENTIALS="$(cat ~/.gcloud/terraform-examples-code.json)"
     ```
 
+* The first command that should be run after writing a new Terraform configuration is the terraform `init command` in order to initialize a working directory containing Terraform configuration files. It is safe to run this command multiple times.
+
+  ```bash
+  terraform init
+  ```
+
 * Validate the changes:
 
   ```bash
