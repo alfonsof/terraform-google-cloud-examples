@@ -58,6 +58,10 @@ This Terraform file deploys a single server on Google Cloud Platform (GCP).
   terraform apply
   ```
 
+* Test the deploy:
+
+  When the `terraform apply` command completes, use the Google Cloud console, you should see the new Google Compute instance.
+
 * Clean up the resources created when you have finished:
 
   ```bash
