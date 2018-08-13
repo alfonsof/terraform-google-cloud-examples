@@ -60,11 +60,21 @@ The cluster of web servers returns "Hello, World" for the URL `/`. The load bala
   terraform apply
   ```
 
-* Test the cluster of web servers. When the `apply` command completes, it will output the DNS name of the load balancer.
+* Test the cluster of web servers:
 
-  ```bash
-  curl http://(load_balancer_public_ip)/
-  ```
+  When the `terraform apply` command completes, it will output the public IP address of the load balancer.
+
+  You can test it in two ways:
+  
+  * Running this command:
+
+    ```bash
+    curl http://(load_balancer_public_ip)/
+    ```
+
+  * Writing in your browser this URL: `http://(load_balancer_public_ip)/`
+
+  You should get a `Hello, World` response message.
 
 * Clean up the resources created when you have finished:
 
