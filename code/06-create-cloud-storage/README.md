@@ -2,7 +2,7 @@
 
 This folder contains the create Cloud Storage example of a [Terraform](https://www.terraform.io/) file on Google Cloud Platform (GCP).
 
-This Terraform file deploys the creation a of a bucket on Google Cloud Platform (GCP) using Google Cloud Storage.
+This Terraform file deploys the creation of a bucket on Google Cloud Platform (GCP) using Google Cloud Storage.
 
 ## Requirements
 
@@ -57,6 +57,10 @@ This Terraform file deploys the creation a of a bucket on Google Cloud Platform 
   ```bash
   terraform apply
   ```
+
+* Test the deploy:
+
+  When the `terraform apply` command completes, use the Google Cloud console, you should see the new Google Storage bucket created in the Google Cloud Project.
 
 * Clean up the resources created when you have finished:
 
