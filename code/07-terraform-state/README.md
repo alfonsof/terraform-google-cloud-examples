@@ -2,9 +2,9 @@
 
 This folder contains a state example of a [Terraform](https://www.terraform.io/) file on Google Cloud Platform (GCP).
 
-This Terraform file use the Google Cloud Storage bucket created in the previous example (create-cloud-storage) to store the information about what infrastructure has been created.
+This Terraform file use the Google Cloud Storage bucket created in the previous example [06-create-cloud-storage](../06-create-cloud-storage/) to store the information about what infrastructure has been created.
 
-This information is stored in the Terraform state file `terraform.tfstate`. This file contains a JSON format that records a mapping from the representation of the resources in GCP (Google Cloud Platform) to Terrafom resources in the configuration files.
+This information is stored in the Terraform state file `terraform.tfstate`. This file contains a JSON format that records a mapping from the representation of the resources on Google Cloud Platform (GCP) to Terrafom resources in the configuration files.
 
 ## Requirements
 
@@ -59,6 +59,12 @@ This information is stored in the Terraform state file `terraform.tfstate`. This
   ```bash
   terraform apply
   ```
+
+* Test the deploy:
+
+  When the `terraform apply` command completes, use the Google Cloud console, you should see the `terraform.tfstate` file created in the Google Storage bucket in the Google Cloud Project.
+
+  The `terraform.tfstate` file is where is stored the terraform state.
 
 * Clean up the resources created when you have finished:
 
