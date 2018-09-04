@@ -12,6 +12,8 @@ Terraform also supports other Cloud providers and this Github repository contain
 
 ## Quick start
 
+You must have a [Google Cloud Platform (GCP)](http://cloud.google.com/) account.
+
 The code consists of Terraform examples using HashiCorp Configuration Language (HCL) on Google Cloud Platform (GCP).
 
 All the code is in the [code](/code) folder.
