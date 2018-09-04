@@ -2,7 +2,7 @@
 
 This folder contains the create Cloud Storage example of a [Terraform](https://www.terraform.io/) file on Google Cloud Platform (GCP).
 
-This Terraform file deploys the creation of a bucket on Google Cloud Platform (GCP) using Google Cloud Storage.
+This Terraform file deploys the creation of a Google Cloud Storage bucket on Google Cloud Platform (GCP).
 
 ## Requirements
 
