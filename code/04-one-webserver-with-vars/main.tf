@@ -1,9 +1,10 @@
+# Configure the Google Cloud provider
 provider "google" {
-  project     = "terraform-examples-gcloud"
-  # credentials = GOOGLE_CREDENTIALS
-  region = "us-east1"
+  project = "terraform-examples-gcloud"
+  region  = "us-east1"
 }
 
+# Create Google Compute Firewall
 resource "google_compute_firewall" "instance" {
   name    = "terraform-example-instance"
   network = "default"
@@ -16,6 +17,7 @@ resource "google_compute_firewall" "instance" {
   }
 }
 
+# Create Google Compute instance
 resource "google_compute_instance" "example" {
   name          = "example"
   machine_type  = "f1-micro"

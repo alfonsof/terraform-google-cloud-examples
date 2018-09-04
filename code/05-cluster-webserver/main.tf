@@ -1,13 +1,15 @@
+# Configure the Google Cloud provider
 provider "google" {
-  project     = "terraform-examples-gcloud"
-  # credentials = GOOGLE_CREDENTIALS
-  region = "us-east1"
+  project = "terraform-examples-gcloud"
+  region  = "us-east1"
 }
 
+# Create Google Compute Address
 resource "google_compute_address" "example" {
     name = "example-address"
 }
 
+# Create Google Compute Firewall
 resource "google_compute_firewall" "instance" {
   name    = "terraform-example-instance"
   network = "default"
@@ -22,6 +24,7 @@ resource "google_compute_firewall" "instance" {
 
 #---------------------------------------------------------------------
 
+# Create Google Compute Forwarding Rule
 resource "google_compute_forwarding_rule" "example" {
   name       = "example-forwarding-rule"
   target     = "${google_compute_target_pool.example.self_link}"
@@ -34,6 +37,7 @@ resource "google_compute_target_pool" "example" {
   health_checks = ["${google_compute_http_health_check.example.name}"]
 }
 
+# Create Google Compute Http Health Check
 resource "google_compute_http_health_check" "example" {
   name                 = "example-health-check"
   request_path         = "/"
@@ -46,6 +50,7 @@ resource "google_compute_http_health_check" "example" {
 
 #---------------------------------------------------------------------
 
+# Create Google Compute instance Group Manager
 resource "google_compute_instance_group_manager" "example" {
   name = "example-group-manager"
   zone = "us-east1-b"
@@ -55,6 +60,7 @@ resource "google_compute_instance_group_manager" "example" {
   base_instance_name = "example"
 }
 
+# Create Google Compute Autoscaler
 resource "google_compute_autoscaler" "example" {
   name   = "example-autoscaler"
   zone   = "us-east1-b"
@@ -71,6 +77,7 @@ resource "google_compute_autoscaler" "example" {
   }
 }
 
+# Create Google Compute instance Template
 resource "google_compute_instance_template" "example" {
   machine_type  = "f1-micro"
   
@@ -87,6 +94,7 @@ resource "google_compute_instance_template" "example" {
 
 #---------------------------------------------------------------------
 /*
+# Create Google Compute Backend Service
 resource "google_compute_backend_service" "example" {
   name        = "example-backend-service"
   port_name   = "http"
