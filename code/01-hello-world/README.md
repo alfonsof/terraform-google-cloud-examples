@@ -2,7 +2,7 @@
 
 This folder contains a "Hello, World" example of a [Terraform](https://www.terraform.io/) file on Google Cloud Platform (GCP).
 
-This Terraform file deploys a single server on Google Cloud Platform (GCP).
+This Terraform file deploys a single server on Google Cloud Platform (GCP) using the shortest script.
 
 ## Requirements
 

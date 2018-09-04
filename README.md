@@ -12,11 +12,21 @@ Terraform also supports other Cloud providers and this Github repository contain
 
 ## Quick start
 
-All the code is in the [code](/code) folder.
-
 The code consists of Terraform examples using HashiCorp Configuration Language (HCL) on Google Cloud Platform (GCP).
 
+All the code is in the [code](/code) folder.
+
 For instructions on running the code, please consult the README in each folder.
+
+You can see the list of examples:
+
+* [01-hello-world](code/01-hello-world) - Terraform "Hello, World": Example of how to deploy a single server on Google Cloud Platform (GCP) using the shortest script.
+* [02-one-server](code/02-one-server) - Terraform One Server: Example of how deploy a single server on Google Cloud Platform (GCP).
+* [03-one-webserver](code/03-one-webserver) - Terraform Web Server: Example of how deploy a single web server on Google Cloud Platform (GCP). The web server returns "Hello, World" for the URL `/` listening on port 8080.
+* [04-one-webserver-with-vars](code/04-one-webserver-with-vars) - Terraform Web Server with vars: Example of how deploy a single web server on Google Cloud Platform (GCP). The web server returns "Hello, World" for the URL `/` listening on port 8080, which is defined as a variable.
+* [05-cluster-webserver](code/05-cluster-webserver) - Terraform Cluster Web Server: Example of how deploy a cluster of web servers on Google Cloud Platform (GCP) using Google Compute Engine and Auto Scaling, as well as a load balancer using Google Cloud Load Balancing. The cluster of web servers returns "Hello, World" for the URL `/`. The load balancer listens on port 80.
+* [06-create-blob-storage](code/06-create-blob-storage) - Terraform Create Blob Storage: Example of how deploy the creation of a bucket on Google Cloud Platform (GCP) using Google Cloud Storage.
+* [07-terraform-state](code/07-terraform-state) - Terraform State: Example of how to store the information about what infrastructure has been created on Google Cloud Platform (GCP).
 
 ## License
 
