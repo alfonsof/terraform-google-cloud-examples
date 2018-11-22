@@ -51,9 +51,9 @@ This Terraform file deploys the creation of a Google Cloud Storage bucket on Goo
 
 * Modify configuration.
 
-  You have to modify the S3 bucket name, which is defined as an input variable `bucket_name` in `vars.tf` file.
+  You have to modify the Google Cloud Storage bucket name, which is defined as an input variable `bucket_name` in `vars.tf` file.
 
-  If you want to modify the S3 bucket name you will be able to do it in several ways:
+  If you want to modify the Google Cloud Storage bucket name you will be able to do it in several ways:
 
   * Loading variables from command line flags.
 
