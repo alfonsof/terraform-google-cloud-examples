@@ -10,6 +10,7 @@ This Terraform file deploys the creation of a Google Cloud Storage bucket on Goo
 * You must have a [Google Cloud Platform (GCP)](https://cloud.google.com/) account.
 * You must have downloaded a Google Cloud Platform credentials file.
 * You must have enabled the Google Compute Engine API.
+* It uses the Terraform Google Cloud Provider that interacts with the many resources supported by Google Cloud Platform (GCP) through its APIs.
 * This code was written for Terraform 0.10.x.
 
 ## Using the code
@@ -40,29 +41,75 @@ This Terraform file deploys the creation of a Google Cloud Storage bucket on Goo
     export GOOGLE_CREDENTIALS="$(cat ~/.gcloud/terraform-examples-code.json)"
     ```
 
-* The first command that should be run after writing a new Terraform configuration is the terraform `init command` in order to initialize a working directory containing Terraform configuration files. It is safe to run this command multiple times.
+* Initialize working directory.
+
+  The first command that should be run after writing a new Terraform configuration is the `terraform init` command in order to initialize a working directory containing Terraform configuration files. It is safe to run this command multiple times.
 
   ```bash
   terraform init
   ```
 
-* Validate the changes:
+* Modify configuration.
+
+  You have to modify the S3 bucket name, which is defined as an input variable `bucket_name` in `vars.tf` file.
+
+  If you want to modify the S3 bucket name you will be able to do it in several ways:
+
+  * Loading variables from command line flags.
+
+    Run Terraform commands in this way:
+
+    ```bash
+    terraform plan -var 'bucket_name=terraform-state-my-bucket'
+    ```
+
+    ```bash
+    terraform apply -var 'bucket_name=terraform-state-my-bucket'
+    ```
+
+  * Loading variables from a file.
+
+    When Terraform runs it will look for a file called `terraform.tfvars`. You can populate this file with variable values that will be loaded when Terraform runs. An example for the content of the `terraform.tfvars` file:
+
+    ```bash
+    bucket_name = "terraform-state-my-bucket"
+    ```
+
+  * Loading variables from environment variables.
+
+    Terraform will also parse any environment variables that are prefixed with `TF_VAR`. You can create an environment variable `TF_VAR_bucket_name`:
+
+    ```bash
+    TF_VAR_bucket_name=terraform-state-my-bucket
+    ```
+
+  * Variable defaults.
+
+    Change the value of the `default` attribute of `bucket_name` input variable in `vars.tf` file.
+
+* Validate the changes.
+
+  Run command:
 
   ```bash
   terraform plan
   ```
 
-* Deploy the changes:
+* Deploy the changes.
+
+  Run command:
 
   ```bash
   terraform apply
   ```
 
-* Test the deploy:
+* Test the deploy.
 
   When the `terraform apply` command completes, use the Google Cloud console, you should see the new Google Storage bucket created in the Google Cloud Project.
 
-* Clean up the resources created when you have finished:
+* Clean up the resources created.
+
+  When you have finished, run command:
 
   ```bash
   terraform destroy
