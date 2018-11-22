@@ -53,7 +53,7 @@ The cluster of web servers returns "Hello, World" for the URL `/`. The load bala
 
 * Modify configuration.
 
-  The web server is listening on port 8080, which is defined as an input variable `server_port` in `vars.tf` file.
+  The web server is listening on port 80, which is defined as an input variable `server_port` in `vars.tf` file.
 
   If you want to modify the server port you will be able to do it in several ways:
 
@@ -82,7 +82,7 @@ The cluster of web servers returns "Hello, World" for the URL `/`. The load bala
     Terraform will also parse any environment variables that are prefixed with `TF_VAR`. You can create an environment variable `TF_VAR_server_port`:
 
     ```bash
-    TF_VAR_server_port=8080
+    TF_VAR_server_port=80
     ```
 
   * Variable defaults.
