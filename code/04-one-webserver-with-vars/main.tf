@@ -4,7 +4,7 @@ provider "google" {
   region  = "us-east1"
 }
 
-# Create Google Compute Firewall
+# Create a Google Compute Firewall
 resource "google_compute_firewall" "instance" {
   name    = "terraform-example-instance"
   network = "default"
@@ -17,7 +17,7 @@ resource "google_compute_firewall" "instance" {
   }
 }
 
-# Create Google Compute instance
+# Create a Google Compute instance
 resource "google_compute_instance" "example" {
   name          = "example"
   machine_type  = "f1-micro"

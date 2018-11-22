@@ -1,7 +1,7 @@
-# Stores the state as a given key in a given Google Cloud Storage bucket
+# Define Terraform backend using a Google Cloud Storage bucket for storing the Terraform state
 terraform {
   backend "gcs" {
-    bucket  = "terraform-state-afb"
+    bucket  = "terraform-state-my-bucket"
     path    = "terraform-state/terraform.tfstate"
     project = "terraform-examples-gcloud"
  }

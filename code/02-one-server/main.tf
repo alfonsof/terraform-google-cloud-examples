@@ -4,7 +4,7 @@ provider "google" {
   region  = "us-east1"
 }
 
-# Create Google Compute instance
+# Create a Google Compute instance
 resource "google_compute_instance" "example" {
   name          = "example"
   machine_type  = "f1-micro"

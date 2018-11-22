@@ -4,7 +4,7 @@ provider "google" {
   region  = "us-east1"
 }
 
-# Create Google Compute Firewall
+# Create a Google Compute Firewall
 resource "google_compute_firewall" "instance" {
   name    = "terraform-example-instance"
   network = "default"
@@ -17,7 +17,7 @@ resource "google_compute_firewall" "instance" {
   }
 }
 
-# Create Google Compute instance
+# Create a Google Compute instance
 resource "google_compute_instance" "example" {
   name          = "example"
   machine_type  = "f1-micro"
@@ -42,7 +42,7 @@ resource "google_compute_instance" "example" {
   metadata_startup_script = "echo 'Hello, World' > index.html ; nohup busybox httpd -f -p 8080 &"
 }
 
-# Output variable with Public IP address
+# Output variable: Public IP address
 output "public_ip" {
   value = "${google_compute_instance.example.network_interface.0.access_config.0.assigned_nat_ip}"
 }
