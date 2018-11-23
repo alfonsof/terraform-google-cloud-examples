@@ -53,7 +53,11 @@ This information is stored in the Terraform state file `terraform.tfstate`. This
 
 * Modify configuration.
 
-  You have to modify the Google Cloud Storage bucket name, which is defined in the `bucket` attribute in `backend.tf` file.
+  You must modify the Google Cloud Storage bucket name, which is defined in the `bucket` attribute in `backend.tf` file.
+
+  ```bash
+  bucket = "<YOUR_BUCKET_NAME>"
+  ```
 
 * Validate the changes.
 
