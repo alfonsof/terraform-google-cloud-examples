@@ -49,7 +49,7 @@ This Terraform file deploys the creation of a Google Cloud Storage bucket on Goo
   terraform init
   ```
 
-* Modify configuration.
+* Configure S3 bucket name.
 
   You must modify the Google Cloud Storage bucket name, which is defined as an input variable `bucket_name` in `vars.tf` file.
 
